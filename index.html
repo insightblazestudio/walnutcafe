@@ -3,216 +3,1187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Walnut Cafe & Bar | Best Cafe & Bar in Selangor, Puchong</title>
-    <!-- Tailwind CSS CDN for fast, modern styling -->
+    <title>Walnut Cafe & Bar - Official Website</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#c5a059',
+                        'gold-light': '#e5ca8f',
+                        'gold-dark': '#9b7631',
+                        bistro: '#c88a65',
+                        darkbg: '#121212',
+                        cardbg: '#1e1e1e',
+                        bordercolor: '#333333'
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'Georgia', 'serif'],
+                        sans: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap');
-        .font-serif-custom { font-family: 'Playfair Display', serif; }
-        body { font-family: 'Inter', sans-serif; background-color: #121212; color: #e5e7eb; }
+        body {
+            background-color: #0d0d0d;
+            color: #e0e0e0;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .font-serif-title {
+            font-family: 'Cinzel', serif;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c5a059;
+        }
+        .nav-item {
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        .nav-item:hover, .nav-item.active {
+            color: #c5a059;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .tab-page {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out forwards;
+        }
+        .tab-page.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .badge-red {
+            background-color: #ff2442;
+        }
     </style>
 </head>
-<body class="bg-zinc-950 text-zinc-100 antialiased selection:bg-amber-600 selection:text-white">
+<body class="flex flex-col min-h-screen bg-black text-gray-200 antialiased selection:bg-gold selection:text-black">
 
-    <!-- Header / Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="font-serif-custom text-2xl tracking-wider text-amber-500 font-bold">
-                WALNUT <span class="text-xs tracking-widest block text-zinc-400 font-sans uppercase">Cafe & Bar</span>
-            </a>
-            <nav class="hidden md:flex space-x-8 text-sm font-medium text-zinc-300">
-                <a href="#about" class="hover:text-amber-500 transition">About Us</a>
-                <a href="#menu" class="hover:text-amber-500 transition">Signature Menu</a>
-                <a href="#coffee" class="hover:text-amber-500 transition">Coffee Beans</a>
-                <a href="#contact" class="hover:text-amber-500 transition">Contact</a>
-            </nav>
-            <div>
-                <a href="https://wa.me/60186636868" target="_blank" class="bg-amber-600 hover:bg-amber-700 text-white px-5 py-2.5 rounded-full text-sm font-medium transition shadow-lg shadow-amber-900/20">
-                    <i class="fab fa-whatsapp mr-2"></i> Reserve Table
-                </a>
+    <!-- SVG DEFINITIONS FOR CRESTS -->
+    <svg class="hidden">
+        <!-- 1. WALNUT CAFE & BAR CREST SVG (IMAGE 1) -->
+        <g id="walnut-cafe-crest-svg">
+            <path d="M70 35 L85 20 L100 35 L115 20 L130 35 L125 45 L75 45 Z" fill="none" stroke="currentColor" stroke-width="3"/>
+            <circle cx="85" cy="17" r="3" fill="currentColor"/>
+            <circle cx="100" cy="14" r="4" fill="currentColor"/>
+            <circle cx="115" cy="17" r="3" fill="currentColor"/>
+            <line x1="72" y1="49" x2="128" y2="49" stroke="currentColor" stroke-width="2"/>
+            <path d="M40 60 C40 60 100 50 100 50 C100 50 160 60 160 60 C160 120 150 170 100 195 C50 170 40 120 40 60 Z" fill="none" stroke="currentColor" stroke-width="4"/>
+            <path d="M46 66 C46 66 100 57 100 57 C100 57 154 66 154 66 C154 118 145 163 100 187 C55 163 46 118 46 66 Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="100" y1="57" x2="100" y2="187" stroke="currentColor" stroke-width="2"/>
+            <line x1="46" y1="115" x2="154" y2="115" stroke="currentColor" stroke-width="2"/>
+            <path d="M100 115 L46 115 C47 138 58 158 75 173 C75 173 100 115 100 115 Z" fill="currentColor" fill-opacity="0.1"/>
+            <g transform="translate(62, 72) scale(0.7)" stroke="currentColor" stroke-width="2" fill="none">
+                <path d="M5 25 L5 5 C5 5 15 2 25 5 L25 25 M5 16 L25 16 M5 25 L25 25 M8 25 L8 35 M22 25 L22 35"/>
+            </g>
+            <g transform="translate(116, 70) scale(0.7)" stroke="currentColor" stroke-width="2" fill="none">
+                <path d="M8 5 L8 15 C8 18 12 18 12 15 L12 5 M10 18 L10 32"/>
+                <path d="M22 5 C17 8 17 16 22 18 L22 32" fill="currentColor" fill-opacity="0.2"/>
+            </g>
+            <g transform="translate(62, 128) scale(0.7)" stroke="currentColor" stroke-width="2" fill="none">
+                <path d="M5 12 L25 12 C25 22 20 25 15 25 C10 25 5 22 5 12 Z"/>
+                <path d="M25 14 C29 14 29 20 25 20"/>
+                <line x1="3" y1="28" x2="27" y2="28"/>
+                <path d="M10 8 C10 5 12 5 12 2 M15 8 C15 5 17 5 17 2 M20 8 C20 5 22 5 22 2" stroke-width="1.5"/>
+            </g>
+            <g transform="translate(118, 128) scale(0.7)" stroke="currentColor" stroke-width="2" fill="none">
+                <path d="M8 15 L22 15 L18 5 L12 5 Z"/>
+                <line x1="15" y1="15" x2="15" y2="27"/>
+                <path d="M10 27 L20 27"/>
+            </g>
+        </g>
+    </svg>
+
+    <!-- HEADER BAR -->
+    <header class="sticky top-0 z-50 bg-black/95 backdrop-blur border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-24">
+                
+                <!-- BRAND LOGO (SVG CREST) -->
+                <div class="flex items-center cursor-pointer" onclick="switchPage('home')">
+                    <div class="flex flex-col items-center py-2">
+                        <svg class="w-16 h-16 sm:w-20 sm:h-20 text-white" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <use href="#walnut-cafe-crest-svg" />
+                        </svg>
+                        <span class="font-serif-title font-bold text-xs sm:text-sm tracking-wider text-white mt-1">WALNUT CAFE & BAR <sup class="text-[9px]">®</sup></span>
+                    </div>
+                </div>
+
+                <!-- DESKTOP NAVIGATION MENU (ITEM 3: Standardized WALNUT GROUP link) -->
+                <nav class="hidden lg:flex items-center space-x-2 text-xs font-semibold tracking-wider text-gray-300 uppercase">
+                    <span class="nav-item px-2 py-1" onclick="switchPage('home')" id="nav-home">HOME</span>
+                    <span class="text-neutral-700">|</span>
+                    <span class="nav-item px-2 py-1" onclick="switchPage('about')" id="nav-about">ABOUT</span>
+                    <span class="text-neutral-700">|</span>
+                    <span class="nav-item px-2 py-1" onclick="switchPage('event')" id="nav-event">EVENT</span>
+                    <span class="text-neutral-700">|</span>
+                    <span class="nav-item px-2 py-1" onclick="switchPage('menu')" id="nav-menu">MENU</span>
+                    <span class="text-neutral-700">|</span>
+                    <span class="nav-item px-2 py-1" onclick="switchPage('products')" id="nav-products">PRODUCTS</span>
+                    <span class="text-neutral-700">|</span>
+                    <span class="nav-item px-2 py-1" onclick="switchPage('policy')" id="nav-policy">POLICY</span>
+                    <span class="text-neutral-700">|</span>
+                    <div class="relative dropdown group py-2">
+                        <span class="nav-item px-2 py-1 inline-flex items-center" id="nav-media">
+                            MEDIA <i class="fa-solid fa-chevron-down text-[9px] ml-1"></i>
+                        </span>
+                        <div class="dropdown-menu hidden absolute left-0 top-full w-36 bg-neutral-900 border border-neutral-800 rounded shadow-xl py-2 z-50">
+                            <a href="#" onclick="switchPage('media', 'gallery'); return false;" class="block px-4 py-2 text-xs text-gray-300 hover:text-gold hover:bg-neutral-800">Gallery</a>
+                            <a href="#" onclick="switchPage('media', 'video'); return false;" class="block px-4 py-2 text-xs text-gray-300 hover:text-gold hover:bg-neutral-800">Video</a>
+                        </div>
+                    </div>
+                    <span class="text-neutral-700">|</span>
+                    <span class="nav-item px-2 py-1" onclick="switchPage('promotion')" id="nav-promotion">PROMOTION</span>
+                    <span class="text-neutral-700">|</span>
+                    <span class="nav-item px-2 py-1" onclick="switchPage('career')" id="nav-career">CAREER</span>
+                    <span class="text-neutral-700">|</span>
+                    <span class="nav-item px-2 py-1" onclick="switchPage('contact')" id="nav-contact">CONTACT</span>
+                    <span class="text-neutral-700">|</span>
+                    <span class="nav-item px-2 py-1" onclick="switchPage('group')" id="nav-group">WALNUT GROUP</span>
+                </nav>
+
+                <!-- MOBILE MENU BUTTON -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-gold focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
+        </div>
+
+        <!-- MOBILE MENU CONTAINER (ITEM 3: Standardized WALNUT GROUP link) -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-neutral-950 border-b border-neutral-800 px-4 pt-2 pb-6 space-y-2 text-center text-sm uppercase">
+            <div class="py-2 border-b border-neutral-800" onclick="switchPage('home'); toggleMobileMenu()">HOME</div>
+            <div class="py-2 border-b border-neutral-800" onclick="switchPage('about'); toggleMobileMenu()">ABOUT</div>
+            <div class="py-2 border-b border-neutral-800" onclick="switchPage('event'); toggleMobileMenu()">EVENT</div>
+            <div class="py-2 border-b border-neutral-800" onclick="switchPage('menu'); toggleMobileMenu()">MENU</div>
+            <div class="py-2 border-b border-neutral-800" onclick="switchPage('products'); toggleMobileMenu()">PRODUCTS</div>
+            <div class="py-2 border-b border-neutral-800" onclick="switchPage('policy'); toggleMobileMenu()">POLICY</div>
+            <div class="py-2 border-b border-neutral-800" onclick="switchPage('media'); toggleMobileMenu()">MEDIA</div>
+            <div class="py-2 border-b border-neutral-800" onclick="switchPage('promotion'); toggleMobileMenu()">PROMOTION</div>
+            <div class="py-2 border-b border-neutral-800" onclick="switchPage('career'); toggleMobileMenu()">CAREER</div>
+            <div class="py-2 border-b border-neutral-800" onclick="switchPage('contact'); toggleMobileMenu()">CONTACT</div>
+            <div class="py-2" onclick="switchPage('group'); toggleMobileMenu()">WALNUT GROUP</div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-20 bg-[url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=1920')] bg-cover bg-center">
-        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/70 to-zinc-950/40"></div>
-        <div class="relative max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 py-32">
-            <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold mb-4 block">Puchong & Kuala Lumpur (KL)</span>
-            <h1 class="font-serif-custom text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6">
-                A Little Indulgence, <br><span class="text-amber-500">The Walnut Way.</span>
-            </h1>
-            <p class="text-lg sm:text-xl text-zinc-300 max-w-2xl mx-auto mb-10 font-light">
-                Experience 5-star dining environments, exquisite Western dishes cooked with fresh seafood, and premium coffee bean supplies in Selangor.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#menu" class="bg-amber-600 hover:bg-amber-700 text-white font-medium px-8 py-3.5 rounded-full transition">Explore Menu</a>
-                <a href="#contact" class="bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-700 font-medium px-8 py-3.5 rounded-full transition">Find Us</a>
-            </div>
-        </div>
-    </section>
+    <main class="flex-grow">
 
-    <!-- About Us Section -->
-    <section id="about" class="py-24 bg-zinc-900/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold block mb-2">Our Philosophy</span>
-                    <h2 class="font-serif-custom text-3xl sm:text-4xl font-bold text-white mb-6">Where Art, Design, & Exceptional Taste Meet</h2>
-                    <p class="text-zinc-400 mb-6 leading-relaxed">
-                        WALNUT CAFE & BAR is more than just a place for good food, relaxation, and chill. Every corner of our premise is thoughtfully styled as a piece of art, inspired by the durability and rich textures of solid walnut wood tables. 
+        <!-- ==================== PAGE: HOME ==================== -->
+        <div id="page-home" class="tab-page active">
+            <div class="relative w-full h-[65vh] min-h-[420px] overflow-hidden bg-neutral-900 group">
+                <div id="hero-slider" class="w-full h-full relative">
+                    <div class="hero-slide absolute inset-0 opacity-100 transition-opacity duration-700 ease-in-out">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1600&q=80" alt="Walnut Dining" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex items-center justify-center">
+                            <div class="text-center px-4 max-w-4xl">
+                                <span class="text-gold uppercase tracking-widest text-sm font-semibold">Exquisite Dining & Specialty Coffee</span>
+                                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif-title font-bold text-white mt-2 mb-4">WALNUT CAFE & BAR</h1>
+                                <p class="text-gray-300 text-sm sm:text-lg mb-6 max-w-2xl mx-auto">Providing our guests with a 5-star environment and handcrafted culinary masterpieces in Puchong.</p>
+                                <div class="flex flex-wrap justify-center gap-4">
+                                    <button onclick="switchPage('menu')" class="bg-gold hover:bg-gold-dark text-black font-semibold px-6 py-3 rounded text-sm uppercase transition">Explore Menu</button>
+                                    <a href="https://wa.me/60380526607?text=Hi%20Walnut%20Cafe,%20I%20would%20like%20to%20reserve%20a%20table" target="_blank" class="bg-transparent border border-gold text-gold hover:bg-gold hover:text-black font-semibold px-6 py-3 rounded text-sm uppercase transition flex items-center gap-2">
+                                        <i class="fa-brands fa-whatsapp text-lg"></i> Fast Booking
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-700 ease-in-out">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80" alt="Walnut Ambience" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex items-center justify-center">
+                            <div class="text-center px-4 max-w-4xl">
+                                <span class="text-gold uppercase tracking-widest text-sm font-semibold">Lifestyle • Relax | Food • Coffee</span>
+                                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif-title font-bold text-white mt-2 mb-4">ELEGANT ART & COMFORT</h1>
+                                <p class="text-gray-300 text-sm sm:text-lg mb-6 max-w-2xl mx-auto">Every corner in our place is designed to be an art piece. Handcrafted solid walnut wood tables.</p>
+                                <button onclick="switchPage('about')" class="bg-gold hover:bg-gold-dark text-black font-semibold px-6 py-3 rounded text-sm uppercase transition">About Walnut</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-gold hover:text-black text-white p-3 rounded-full transition">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-gold hover:text-black text-white p-3 rounded-full transition">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <section class="py-16 bg-neutral-950 text-center border-b border-neutral-800">
+                <div class="max-w-4xl mx-auto px-4">
+                    <span class="text-gold text-xs font-bold tracking-widest uppercase">Our Commitment</span>
+                    <h2 class="text-2xl sm:text-4xl font-serif-title text-white mt-2 mb-6">WELCOME TO WALNUT CAFE & BAR</h2>
+                    <div class="w-16 h-0.5 bg-gold mx-auto mb-6"></div>
+                    <p class="text-gray-300 text-base sm:text-lg leading-relaxed italic">
+                        "We pledge to provide our guests with 5-star environment and quality food."
                     </p>
-                    <p class="text-zinc-400 mb-8 leading-relaxed">
-                        We pledge to provide guests with a 5-star environment, insisting on the freshest ingredients for our signature Western fusion dishes and premium coffee blends.
+                    <p class="text-neutral-400 text-sm mt-4">
+                        We insist to use the freshest ingredients for all our signature foods and drinks, paired with our iconic custom solid walnut wooden tables.
                     </p>
-                    <div class="grid grid-cols-2 gap-6 border-t border-zinc-800 pt-6">
-                        <div>
-                            <h3 class="font-serif-custom text-3xl font-bold text-amber-500">5-Star</h3>
-                            <p class="text-sm text-zinc-400 mt-1">Environment & Ambience</p>
+                </div>
+            </section>
+
+            <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-10">
+                    <div>
+                        <span class="text-gold text-xs font-bold tracking-widest uppercase">Chef Specialties</span>
+                        <h2 class="text-3xl font-serif-title text-white mt-1">SIGNATURE DISHES</h2>
+                    </div>
+                    <button onclick="switchPage('menu')" class="mt-4 md:mt-0 text-gold hover:text-gold-light text-sm font-semibold flex items-center gap-2">
+                        View Full Menu <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-cardbg border border-neutral-800 rounded-lg overflow-hidden group hover:border-gold transition">
+                        <div class="h-52 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=600&q=80" alt="Seafood Aglio Olio" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 right-3 bg-black/80 text-gold px-3 py-1 rounded text-xs font-bold">RM 38.00</span>
                         </div>
-                        <div>
-                            <h3 class="font-serif-custom text-3xl font-bold text-amber-500">Fresh</h3>
-                            <p class="text-sm text-zinc-400 mt-1">Seafood & Ingredients Daily</p>
+                        <div class="p-6">
+                            <h3 class="font-serif-title text-xl text-white mb-2">Seafood Aglio Olio</h3>
+                            <p class="text-gray-400 text-xs sm:text-sm mb-4 line-clamp-2">Sautéed fresh tiger prawns, squids, garlic, chili flakes, and extra virgin olive oil tossed with al dente spaghetti.</p>
+                            <button onclick="switchPage('menu')" class="text-gold text-xs font-bold uppercase tracking-wider hover:underline">Read Details</button>
+                        </div>
+                    </div>
+                    <div class="bg-cardbg border border-neutral-800 rounded-lg overflow-hidden group hover:border-gold transition">
+                        <div class="h-52 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Lemongrass Pork Chop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 right-3 bg-black/80 text-gold px-3 py-1 rounded text-xs font-bold">RM 42.00</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif-title text-xl text-white mb-2">Lemongrass Pork Chop</h3>
+                            <p class="text-gray-400 text-xs sm:text-sm mb-4 line-clamp-2">Marinated premium pork chop grilled to perfection, infused with lemongrass aroma and served with homemade sauce.</p>
+                            <button onclick="switchPage('menu')" class="text-gold text-xs font-bold uppercase tracking-wider hover:underline">Read Details</button>
+                        </div>
+                    </div>
+                    <div class="bg-cardbg border border-neutral-800 rounded-lg overflow-hidden group hover:border-gold transition">
+                        <div class="h-52 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80" alt="Roasted Salmon" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 right-3 bg-black/80 text-gold px-3 py-1 rounded text-xs font-bold">RM 46.00</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif-title text-xl text-white mb-2">Pan-Roasted Atlantic Salmon</h3>
+                            <p class="text-gray-400 text-xs sm:text-sm mb-4 line-clamp-2">Crispy skin Atlantic salmon served over mashed potatoes, seasonal vegetables, and lemon dill cream sauce.</p>
+                            <button onclick="switchPage('menu')" class="text-gold text-xs font-bold uppercase tracking-wider hover:underline">Read Details</button>
                         </div>
                     </div>
                 </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&q=80&w=600" alt="Cafe Interior" class="rounded-2xl object-cover h-64 w-full shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=600" alt="Western Food" class="rounded-2xl object-cover h-64 w-full shadow-lg mt-8">
+            </section>
+
+            <section class="py-16 bg-neutral-950 border-t border-b border-neutral-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-2xl mx-auto mb-12">
+                        <span class="text-gold text-xs font-bold tracking-widest uppercase">Coffee Bean Supplier Malaysia</span>
+                        <h2 class="text-3xl font-serif-title text-white mt-1">SPECIALTY COFFEE BEANS</h2>
+                        <div class="w-12 h-0.5 bg-gold mx-auto my-3"></div>
+                        <p class="text-gray-400 text-xs sm:text-sm">We import and roast premium arabica beans directly for coffee connoisseurs and business partners across Malaysia.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="bg-cardbg p-5 rounded-lg border border-neutral-800 text-center flex flex-col justify-between hover:border-gold transition">
+                            <div>
+                                <div class="w-16 h-16 bg-neutral-900 border border-gold/30 rounded-full flex items-center justify-center mx-auto mb-4 text-gold text-2xl">
+                                    <i class="fa-solid fa-mug-hot"></i>
+                                </div>
+                                <h4 class="font-serif-title text-base text-white font-semibold">Costa Rica Tarrazu San Rafael</h4>
+                                <p class="text-gold text-xs my-2">Medium Roast</p>
+                                <p class="text-neutral-400 text-xs mb-4">Notes of citrus, chocolate fudge, balanced acidity and smooth finish.</p>
+                            </div>
+                            <button onclick="switchPage('products')" class="w-full py-2 bg-neutral-800 hover:bg-gold hover:text-black text-xs font-bold uppercase rounded transition">View Supply Details</button>
+                        </div>
+                        <div class="bg-cardbg p-5 rounded-lg border border-neutral-800 text-center flex flex-col justify-between hover:border-gold transition">
+                            <div>
+                                <div class="w-16 h-16 bg-neutral-900 border border-gold/30 rounded-full flex items-center justify-center mx-auto mb-4 text-gold text-2xl">
+                                    <i class="fa-solid fa-mug-hot"></i>
+                                </div>
+                                <h4 class="font-serif-title text-base text-white font-semibold">Colombia Huila Supremo</h4>
+                                <p class="text-gold text-xs my-2">Medium-Dark Roast</p>
+                                <p class="text-neutral-400 text-xs mb-4">Rich aroma, notes of caramel, red apple, and full-bodied chocolate body.</p>
+                            </div>
+                            <button onclick="switchPage('products')" class="w-full py-2 bg-neutral-800 hover:bg-gold hover:text-black text-xs font-bold uppercase rounded transition">View Supply Details</button>
+                        </div>
+                        <div class="bg-cardbg p-5 rounded-lg border border-neutral-800 text-center flex flex-col justify-between hover:border-gold transition">
+                            <div>
+                                <div class="w-16 h-16 bg-neutral-900 border border-gold/30 rounded-full flex items-center justify-center mx-auto mb-4 text-gold text-2xl">
+                                    <i class="fa-solid fa-mug-hot"></i>
+                                </div>
+                                <h4 class="font-serif-title text-base text-white font-semibold">Sumatra Mandheling G1</h4>
+                                <p class="text-gold text-xs my-2">Triple Pick / Dark Roast</p>
+                                <p class="text-neutral-400 text-xs mb-4">Earthy tones, herbal spice notes, low acidity with intense bold flavor.</p>
+                            </div>
+                            <button onclick="switchPage('products')" class="w-full py-2 bg-neutral-800 hover:bg-gold hover:text-black text-xs font-bold uppercase rounded transition">View Supply Details</button>
+                        </div>
+                        <div class="bg-cardbg p-5 rounded-lg border border-neutral-800 text-center flex flex-col justify-between hover:border-gold transition">
+                            <div>
+                                <div class="w-16 h-16 bg-neutral-900 border border-gold/30 rounded-full flex items-center justify-center mx-auto mb-4 text-gold text-2xl">
+                                    <i class="fa-solid fa-mug-hot"></i>
+                                </div>
+                                <h4 class="font-serif-title text-base text-white font-semibold">Guatemala Huehuetenango</h4>
+                                <p class="text-gold text-xs my-2">Light-Medium Roast</p>
+                                <p class="text-neutral-400 text-xs mb-4">Floral aroma, bright winey acidity, sweet buttery toffee taste.</p>
+                            </div>
+                            <button onclick="switchPage('products')" class="w-full py-2 bg-neutral-800 hover:bg-gold hover:text-black text-xs font-bold uppercase rounded transition">View Supply Details</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
         </div>
-    </section>
 
-    <!-- Menu Section -->
-    <section id="menu" class="py-24 bg-zinc-950">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold block mb-2">Gastronomy Excellence</span>
-                <h2 class="font-serif-custom text-3xl sm:text-4xl font-bold text-white">Our Signature Menu</h2>
-                <p class="text-zinc-400 mt-4">Top-notch food prepared wholeheartedly with fine contemporary flavors.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Item 1 -->
-                <div class="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden group hover:border-amber-500/50 transition">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1633383718085-02acdec67358?auto=format&fit=crop&q=80&w=800" alt="Seafood Aglio Olio" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-2">
-                            <h3 class="font-serif-custom text-xl font-bold text-white">Signature Seafood Aglio Olio</h3>
-                        </div>
-                        <p class="text-zinc-400 text-sm mb-4">Spaghetti tossed with half-shell scallops, prawns, calamari, clams, garlic, chilli, and aromatic herbs.</p>
-                        <span class="text-amber-500 font-semibold text-sm">Western Fusion</span>
-                    </div>
+        <!-- ==================== PAGE: ABOUT ==================== -->
+        <div id="page-about" class="tab-page">
+            <div class="max-w-4xl mx-auto px-4 py-16">
+                <div class="text-center mb-12">
+                    <h1 class="text-3xl sm:text-5xl font-serif-title font-bold text-white tracking-wide">WALNUT CAFE & BAR</h1>
+                    <p class="text-gold text-sm sm:text-base font-semibold mt-3 tracking-widest uppercase">Lifestyle • Relax | Food • Coffee</p>
+                    <div class="w-20 h-0.5 bg-gold mx-auto mt-6"></div>
                 </div>
 
-                <!-- Item 2 -->
-                <div class="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden group hover:border-amber-500/50 transition">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1626509809489-3553226f5d4d?auto=format&fit=crop&q=80&w=800" alt="Ayam Gepuk" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-2">
-                            <h3 class="font-serif-custom text-xl font-bold text-white">Crispy Chicken Chop Ayam Gepuk</h3>
-                        </div>
-                        <p class="text-zinc-400 text-sm mb-4">Crispy chicken chop paired with fragrant Nasi Lemak Kukus, spicy Sambal Gepuk, and signature walnut peanut sauce.</p>
-                        <span class="text-amber-500 font-semibold text-sm">Local Twist</span>
-                    </div>
-                </div>
-
-                <!-- Item 3 -->
-                <div class="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden group hover:border-amber-500/50 transition">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=800" alt="Bar & Drinks" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-2">
-                            <h3 class="font-serif-custom text-xl font-bold text-white">Asam Seabass Risotto</h3>
-                        </div>
-                        <p class="text-zinc-400 text-sm mb-4">Fresh seabass, housemade sweet-sour-spicy Asam sauce, and eggplant delivering a bold Malaysian-inspired risotto.</p>
-                        <span class="text-amber-500 font-semibold text-sm">Chef Special</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Coffee Bean Supplier Section -->
-    <section id="coffee" class="py-24 bg-zinc-900/50 border-t border-zinc-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold block mb-2">Wholesale & Retail</span>
-            <h2 class="font-serif-custom text-3xl sm:text-4xl font-bold text-white mb-6">Coffee Bean Supplier Malaysia</h2>
-            <p class="text-zinc-400 max-w-2xl mx-auto mb-12">
-                We supply high-grade coffee powder and selected single-origin beans (Costa Rica, Colombia, Guatemala, Sumatra) built for true coffee aficionados.
-            </p>
-            <div class="flex justify-center">
-                <a href="https://wa.me/60186636868" target="_blank" class="border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white px-8 py-3 rounded-full transition font-medium">Inquire Coffee Supply</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & Location -->
-    <section id="contact" class="py-24 bg-zinc-950">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <div>
-                    <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold block mb-2">Get in Touch</span>
-                    <h2 class="font-serif-custom text-3xl sm:text-4xl font-bold text-white mb-6">Visit Our Outlet</h2>
+                <div class="bg-cardbg border border-neutral-800 rounded-xl p-8 sm:p-12 space-y-6 text-gray-300 text-sm sm:text-base leading-relaxed">
+                    <p class="text-white text-base sm:text-lg font-medium leading-relaxed">
+                        <strong class="text-gold">WALNUT CAFE & BAR</strong> concerns about the quality of our food, drink, services, and also the overall environment. Hence, we insist to use freshest ingredients for all our signature foods and drinks.
+                    </p>
                     
-                    <div class="space-y-6 text-zinc-300">
-                        <div class="flex items-start space-x-4">
-                            <div class="bg-amber-600/10 p-3 rounded-xl text-amber-500"><i class="fas fa-map-marker-alt text-xl"></i></div>
-                            <div>
-                                <h3 class="font-bold text-white">Location</h3>
-                                <p class="text-zinc-400 text-sm mt-1">G-10, Ground Floor, Tower 4 & 5, PFCC, Jalan Puteri 1/2, Bandar Puteri, 47100 Puchong, Selangor, Malaysia.</p>
-                            </div>
-                        </div>
+                    <p>
+                        <strong class="text-gold">WALNUT CAFE & BAR</strong> is more than just a place for good food, relax and chill. Every corner in our place is designed to be an art piece. It is meant for peoples who love art and design, and great for photo shootings, too!
+                    </p>
 
-                        <div class="flex items-start space-x-4">
-                            <div class="bg-amber-600/10 p-3 rounded-xl text-amber-500"><i class="fas fa-clock text-xl"></i></div>
-                            <div>
-                                <h3 class="font-bold text-white">Operating Hours</h3>
-                                <p class="text-zinc-400 text-sm mt-1">Monday – Sunday: 11:00 AM – 12:00 AM (Daily)</p>
-                            </div>
-                        </div>
+                    <p>
+                        Another great thing to explore is the design of all our tables. The name of <strong class="text-gold">WALNUT</strong> inspired by the wood material of the tables that we use in our place. WALNUT is one of the most strong, hard, and durable woods that is great for doing tabletop. It has excellent woodworking qualities and takes finishes well. Each WALNUT table in our place has different wood texture and uniquely designed for sale.
+                    </p>
 
-                        <div class="flex items-start space-x-4">
-                            <div class="bg-amber-600/10 p-3 rounded-xl text-amber-500"><i class="fas fa-phone-alt text-xl"></i></div>
-                            <div>
-                                <h3 class="font-bold text-white">Phone Inquiries</h3>
-                                <p class="text-zinc-400 text-sm mt-1">+60 3-8052 6607 / +60 18-663 6868</p>
-                            </div>
-                        </div>
+                    <p class="border-l-2 border-gold pl-4 italic text-gray-200">
+                        Whether for food, art, coffee, or beer, WALNUT CAFE & BAR is perfect for any occasion and welcomes friends and families to enjoy themselves just as they would at home.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80" alt="Walnut Cafe Interior" class="rounded-lg border border-neutral-800 w-full h-64 object-cover">
+                    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80" alt="Walnut Cafe Coffee" class="rounded-lg border border-neutral-800 w-full h-64 object-cover">
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== PAGE: EVENT ==================== -->
+        <div id="page-event" class="tab-page">
+            <div class="max-w-6xl mx-auto px-4 py-16">
+                <div class="text-center mb-12">
+                    <span class="text-gold text-xs font-bold tracking-widest uppercase">Celebrations & Corporate</span>
+                    <h1 class="text-3xl sm:text-4xl font-serif-title font-bold text-white mt-1">EVENTS & PRIVATE FUNCTION SPACE</h1>
+                    <div class="w-16 h-0.5 bg-gold mx-auto my-4"></div>
+                    <p class="text-gray-400 max-w-2xl mx-auto text-xs sm:text-sm">Host your memorable occasions at Walnut Cafe & Bar. Flexible venue layouts, high-end acoustic setup, and tailor-made menus.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-16">
+                    <div class="space-y-4 text-gray-300 text-sm leading-relaxed">
+                        <h3 class="text-2xl font-serif-title text-gold font-bold">Unforgettable Celebrations</h3>
+                        <p>Looking for a stylish venue with great food, drinks, and atmosphere? Walnut Cafe & Bar offers multi-functional space ideal for all types of events:</p>
+                        <ul class="space-y-2 text-xs sm:text-sm list-disc pl-5 text-neutral-300">
+                            <li>Corporate Gatherings & Product Launches</li>
+                            <li>Annual Dinners & Award Nights</li>
+                            <li>Birthday Parties & Private Banquets</li>
+                            <li>Full Moon / Baby Shower Celebrations</li>
+                            <li>VIP Private Dining & Acoustic Performances</li>
+                        </ul>
+                        <p>We provide full event support including customized set menus, cocktail setup, sound system, projector facilities, and tailored decorations to make your event a success.</p>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80" alt="Event Space" class="rounded-lg border border-neutral-800 shadow-2xl">
                     </div>
                 </div>
 
-                <div class="bg-zinc-900 p-8 rounded-3xl border border-zinc-800">
-                    <h3 class="font-serif-custom text-2xl font-bold text-white mb-6">Quick Reservation & Inquiry</h3>
-                    <form action="https://wa.me/60186636868" method="GET" target="_blank" class="space-y-4">
-                        <div>
-                            <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-2">Your Name</label>
-                            <input type="text" placeholder="John Doe" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500" required>
+                <!-- Event Inquiry Form -->
+                <div class="bg-cardbg border border-neutral-800 rounded-xl p-8 sm:p-10 max-w-3xl mx-auto">
+                    <h3 class="text-xl font-serif-title text-white text-center mb-6">EVENT INQUIRY & RESERVATION</h3>
+                    <form onsubmit="handleFormSubmit(event, 'Event Inquiry Sent! We will contact you shortly.')" class="space-y-4 text-sm">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-400 mb-1">Your Name *</label>
+                                <input type="text" required class="w-full bg-neutral-900 border border-neutral-700 rounded px-4 py-2.5 text-white focus:outline-none focus:border-gold">
+                            </div>
+                            <div>
+                                <label class="block text-gray-400 mb-1">Contact Number *</label>
+                                <input type="tel" required class="w-full bg-neutral-900 border border-neutral-700 rounded px-4 py-2.5 text-white focus:outline-none focus:border-gold">
+                            </div>
                         </div>
-                        <div>
-                            <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-2">Message / Booking Details</label>
-                            <textarea rows="4" placeholder="I would like to book a table for 4 people this Friday..." class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500" required></textarea>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-400 mb-1">Event Type</label>
+                                <select class="w-full bg-neutral-900 border border-neutral-700 rounded px-4 py-2.5 text-white focus:outline-none focus:border-gold">
+                                    <option>Birthday Party</option>
+                                    <option>Corporate Dinner</option>
+                                    <option>Annual Dinner</option>
+                                    <option>Full Moon / Baby Shower</option>
+                                    <option>Others</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-400 mb-1">Estimated Pax</label>
+                                <input type="number" placeholder="e.g. 30" class="w-full bg-neutral-900 border border-neutral-700 rounded px-4 py-2.5 text-white focus:outline-none focus:border-gold">
+                            </div>
                         </div>
-                        <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-medium py-3.5 rounded-xl transition shadow-lg shadow-amber-900/20">
-                            Send via WhatsApp
-                        </button>
+                        <!-- ITEM 4 FIX: Corrected label syntax for free writing box -->
+                        <div>
+                            <label class="block text-gray-400 mb-1">Preferred Date &amp; Event Details</label>
+                            <textarea rows="3" class="w-full bg-neutral-900 border border-neutral-700 rounded px-4 py-2.5 text-white focus:outline-none focus:border-gold" placeholder="Tell us about your event requirements..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gold hover:bg-gold-dark text-black font-bold py-3 rounded uppercase transition">Submit Event Inquiry</button>
                     </form>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="bg-zinc-950 border-t border-zinc-900 py-8 text-center text-sm text-zinc-500">
-        <p>&copy; 2026 Walnut Cafe & Bar. All rights reserved. Designed for GitHub Pages deployment.</p>
+        <!-- ==================== PAGE: MENU ==================== -->
+        <div id="page-menu" class="tab-page">
+            <div class="max-w-7xl mx-auto px-4 py-16">
+                <div class="text-center mb-10">
+                    <span class="text-gold text-xs font-bold tracking-widest uppercase">Fresh Ingredients & Artful Flavors</span>
+                    <h1 class="text-3xl sm:text-4xl font-serif-title font-bold text-white mt-1">OUR MENU</h1>
+                    <div class="w-16 h-0.5 bg-gold mx-auto my-3"></div>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-2 mb-10 border-b border-neutral-800 pb-4 text-xs sm:text-sm">
+                    <button onclick="filterMenu('all')" class="menu-tab-btn active bg-gold text-black px-4 py-2 rounded font-bold transition">ALL ITEMS</button>
+                    <button onclick="filterMenu('western')" class="menu-tab-btn bg-neutral-900 text-gray-300 hover:text-gold px-4 py-2 rounded font-semibold transition">WESTERN MAINS</button>
+                    <button onclick="filterMenu('pasta')" class="menu-tab-btn bg-neutral-900 text-gray-300 hover:text-gold px-4 py-2 rounded font-semibold transition">PASTA & SEAFOOD</button>
+                    <button onclick="filterMenu('asian')" class="menu-tab-btn bg-neutral-900 text-gray-300 hover:text-gold px-4 py-2 rounded font-semibold transition">ASIAN FUSION</button>
+                    <button onclick="filterMenu('drinks')" class="menu-tab-btn bg-neutral-900 text-gray-300 hover:text-gold px-4 py-2 rounded font-semibold transition">DRINKS & COFFEE</button>
+                </div>
+
+                <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="menu-item western flex bg-cardbg p-4 rounded-lg border border-neutral-800 gap-4">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=300&q=80" alt="Lemongrass Pork Chop" class="w-24 h-24 sm:w-28 sm:h-28 object-cover rounded-lg flex-shrink-0">
+                        <div class="flex flex-col justify-between flex-grow">
+                            <div>
+                                <div class="flex justify-between items-start">
+                                    <h4 class="font-serif-title text-base font-bold text-white">Lemongrass Grilled Pork Chop</h4>
+                                    <span class="text-gold font-bold text-sm">RM 42.00</span>
+                                </div>
+                                <p class="text-neutral-400 text-xs mt-1">Marinated thick-cut pork chop with lemongrass, served with house salad and garlic potato wedges.</p>
+                            </div>
+                            <span class="text-[10px] text-gold uppercase tracking-wider">Signature Main</span>
+                        </div>
+                    </div>
+                    <div class="menu-item pasta flex bg-cardbg p-4 rounded-lg border border-neutral-800 gap-4">
+                        <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=300&q=80" alt="Seafood Aglio Olio" class="w-24 h-24 sm:w-28 sm:h-28 object-cover rounded-lg flex-shrink-0">
+                        <div class="flex flex-col justify-between flex-grow">
+                            <div>
+                                <div class="flex justify-between items-start">
+                                    <h4 class="font-serif-title text-base font-bold text-white">Seafood Aglio Olio</h4>
+                                    <span class="text-gold font-bold text-sm">RM 38.00</span>
+                                </div>
+                                <p class="text-neutral-400 text-xs mt-1">Fresh tiger prawns, squid, garlic, chili, and virgin olive oil over spaghetti.</p>
+                            </div>
+                            <span class="text-[10px] text-gold uppercase tracking-wider">Chef Pick</span>
+                        </div>
+                    </div>
+                    <div class="menu-item western flex bg-cardbg p-4 rounded-lg border border-neutral-800 gap-4">
+                        <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=300&q=80" alt="Roasted Salmon" class="w-24 h-24 sm:w-28 sm:h-28 object-cover rounded-lg flex-shrink-0">
+                        <div class="flex flex-col justify-between flex-grow">
+                            <div>
+                                <div class="flex justify-between items-start">
+                                    <h4 class="font-serif-title text-base font-bold text-white">Pan-Roasted Salmon</h4>
+                                    <span class="text-gold font-bold text-sm">RM 46.00</span>
+                                </div>
+                                <p class="text-neutral-400 text-xs mt-1">Atlantic salmon fillet, creamy dill sauce, roasted potatoes, and asparagus.</p>
+                            </div>
+                            <span class="text-[10px] text-gold uppercase tracking-wider">Healthy Choice</span>
+                        </div>
+                    </div>
+                    <div class="menu-item asian flex bg-cardbg p-4 rounded-lg border border-neutral-800 gap-4">
+                        <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=300&q=80" alt="Nasi Goreng Special" class="w-24 h-24 sm:w-28 sm:h-28 object-cover rounded-lg flex-shrink-0">
+                        <div class="flex flex-col justify-between flex-grow">
+                            <div>
+                                <div class="flex justify-between items-start">
+                                    <h4 class="font-serif-title text-base font-bold text-white">Walnut Signature Fried Rice</h4>
+                                    <span class="text-gold font-bold text-sm">RM 28.00</span>
+                                </div>
+                                <p class="text-neutral-400 text-xs mt-1">Wok-hei fried rice served with grilled chicken skewer, sunny egg, and keropok.</p>
+                            </div>
+                            <span class="text-[10px] text-gold uppercase tracking-wider">Asian Specialty</span>
+                        </div>
+                    </div>
+                    <div class="menu-item drinks flex bg-cardbg p-4 rounded-lg border border-neutral-800 gap-4">
+                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=300&q=80" alt="Specialty Latte" class="w-24 h-24 sm:w-28 sm:h-28 object-cover rounded-lg flex-shrink-0">
+                        <div class="flex flex-col justify-between flex-grow">
+                            <div>
+                                <div class="flex justify-between items-start">
+                                    <h4 class="font-serif-title text-base font-bold text-white">Signature Caffe Latte</h4>
+                                    <span class="text-gold font-bold text-sm">RM 14.00</span>
+                                </div>
+                                <p class="text-neutral-400 text-xs mt-1">Hand-brewed espresso shot using house blend roasted Arabica beans with silky steamed milk.</p>
+                            </div>
+                            <span class="text-[10px] text-gold uppercase tracking-wider">Beverage</span>
+                        </div>
+                    </div>
+                    <div class="menu-item drinks flex bg-cardbg p-4 rounded-lg border border-neutral-800 gap-4">
+                        <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=300&q=80" alt="Craft Cocktail" class="w-24 h-24 sm:w-28 sm:h-28 object-cover rounded-lg flex-shrink-0">
+                        <div class="flex flex-col justify-between flex-grow">
+                            <div>
+                                <div class="flex justify-between items-start">
+                                    <h4 class="font-serif-title text-base font-bold text-white">Walnut Sunset Cocktail</h4>
+                                    <span class="text-gold font-bold text-sm">RM 32.00</span>
+                                </div>
+                                <p class="text-neutral-400 text-xs mt-1">Premium gin infusion, fresh citrus, passion fruit, and aromatic tonic water.</p>
+                            </div>
+                            <span class="text-[10px] text-gold uppercase tracking-wider">Bar Cocktail</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== PAGE: PRODUCTS ==================== -->
+        <div id="page-products" class="tab-page">
+            <div class="max-w-7xl mx-auto px-4 py-16">
+                <div class="bg-gradient-to-r from-neutral-900 via-neutral-950 to-neutral-900 border border-neutral-800 rounded-2xl p-8 sm:p-12 mb-12 text-center relative overflow-hidden">
+                    <span class="text-gold text-xs font-bold tracking-widest uppercase bg-gold/10 px-3 py-1 rounded-full border border-gold/30">Official Roasted Coffee Beans</span>
+                    <h1 class="text-3xl sm:text-5xl font-serif-title font-bold text-white my-4">Coffee Bean Supplier Malaysia</h1>
+                    <p class="text-gray-300 text-xs sm:text-sm max-w-3xl mx-auto leading-relaxed">
+                        Walnut Cafe & Bar is a leading specialty <strong>Coffee Bean Supplier in Malaysia</strong>. We supply high-grade single-origin and blended Arabica coffee beans to cafes, hotels, offices, and retail coffee lovers across Malaysia.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-cardbg border border-neutral-800 rounded-xl p-6 flex flex-col justify-between hover:border-gold transition">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="font-serif-title text-xl text-white font-bold">Costa Rica Tarrazu San Rafael</h3>
+                                    <span class="text-xs text-gold">Origin: Tarrazu, Costa Rica</span>
+                                </div>
+                                <span class="bg-gold/20 text-gold font-bold text-sm px-3 py-1 rounded">RM 68.00 / 250g</span>
+                            </div>
+                            <ul class="text-xs text-neutral-300 space-y-1.5 mb-4 border-t border-b border-neutral-800 py-3">
+                                <li><strong>Process:</strong> Washed</li>
+                                <li><strong>Roast Level:</strong> Medium Roast</li>
+                                <li><strong>Tasting Notes:</strong> Bright Citrus, Chocolate Fudge, Clean Caramel Finish</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/60380526607?text=Hi%20Walnut%20Group,%20I%20am%20interested%20in%20ordering%20Costa%20Rica%20Tarrazu%20Coffee%20Beans" target="_blank" class="w-full text-center bg-gold hover:bg-gold-dark text-black font-bold py-2.5 rounded text-xs uppercase transition flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Order Wholesale / Retail via WhatsApp
+                        </a>
+                    </div>
+
+                    <div class="bg-cardbg border border-neutral-800 rounded-xl p-6 flex flex-col justify-between hover:border-gold transition">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="font-serif-title text-xl text-white font-bold">Colombia Huila Supremo</h3>
+                                    <span class="text-xs text-gold">Origin: Huila Region, Colombia</span>
+                                </div>
+                                <span class="bg-gold/20 text-gold font-bold text-sm px-3 py-1 rounded">RM 65.00 / 250g</span>
+                            </div>
+                            <ul class="text-xs text-neutral-300 space-y-1.5 mb-4 border-t border-b border-neutral-800 py-3">
+                                <li><strong>Process:</strong> Wet Processed</li>
+                                <li><strong>Roast Level:</strong> Medium-Dark Roast</li>
+                                <li><strong>Tasting Notes:</strong> Red Apple, Creamy Chocolate, Toasted Almond</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/60380526607?text=Hi%20Walnut%20Group,%20I%20am%20interested%20in%20ordering%20Colombia%20Huila%20Supremo%20Beans" target="_blank" class="w-full text-center bg-gold hover:bg-gold-dark text-black font-bold py-2.5 rounded text-xs uppercase transition flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Order Wholesale / Retail via WhatsApp
+                        </a>
+                    </div>
+
+                    <div class="bg-cardbg border border-neutral-800 rounded-xl p-6 flex flex-col justify-between hover:border-gold transition">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="font-serif-title text-xl text-white font-bold">Sumatra Mandheling G1 (Triple Pick)</h3>
+                                    <span class="text-xs text-gold">Origin: Sumatra, Indonesia</span>
+                                </div>
+                                <span class="bg-gold/20 text-gold font-bold text-sm px-3 py-1 rounded">RM 58.00 / 250g</span>
+                            </div>
+                            <ul class="text-xs text-neutral-300 space-y-1.5 mb-4 border-t border-b border-neutral-800 py-3">
+                                <li><strong>Process:</strong> Giling Basah (Wet Hulled)</li>
+                                <li><strong>Roast Level:</strong> Dark Roast</li>
+                                <li><strong>Tasting Notes:</strong> Earthy Spice, Dark Cocoa, Low Acidity, Heavy Body</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/60380526607?text=Hi%20Walnut%20Group,%20I%20am%20interested%20in%20ordering%20Sumatra%20Mandheling%20Beans" target="_blank" class="w-full text-center bg-gold hover:bg-gold-dark text-black font-bold py-2.5 rounded text-xs uppercase transition flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Order Wholesale / Retail via WhatsApp
+                        </a>
+                    </div>
+
+                    <div class="bg-cardbg border border-neutral-800 rounded-xl p-6 flex flex-col justify-between hover:border-gold transition">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="font-serif-title text-xl text-white font-bold">Guatemala Huehuetenango</h3>
+                                    <span class="text-xs text-gold">Origin: Huehuetenango Highlands</span>
+                                </div>
+                                <span class="bg-gold/20 text-gold font-bold text-sm px-3 py-1 rounded">RM 72.00 / 250g</span>
+                            </div>
+                            <ul class="text-xs text-neutral-300 space-y-1.5 mb-4 border-t border-b border-neutral-800 py-3">
+                                <li><strong>Process:</strong> Fully Washed</li>
+                                <li><strong>Roast Level:</strong> Light-Medium Roast</li>
+                                <li><strong>Tasting Notes:</strong> Floral Aroma, Winey Acidity, Sweet Toffee</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/60380526607?text=Hi%20Walnut%20Group,%20I%20am%20interested%20in%20ordering%20Guatemala%20Beans" target="_blank" class="w-full text-center bg-gold hover:bg-gold-dark text-black font-bold py-2.5 rounded text-xs uppercase transition flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Order Wholesale / Retail via WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== PAGE: POLICY ==================== -->
+        <div id="page-policy" class="tab-page">
+            <div class="max-w-4xl mx-auto px-4 py-16">
+                <div class="text-center mb-10">
+                    <h1 class="text-3xl sm:text-4xl font-serif-title font-bold text-white">PRIVACY POLICY</h1>
+                    <div class="w-16 h-0.5 bg-gold mx-auto my-3"></div>
+                    <p class="text-xs text-neutral-400">Walnut Cafe & Bar Legal & Personal Data Protection Policy</p>
+                </div>
+
+                <div class="bg-cardbg border border-neutral-800 rounded-xl p-6 sm:p-10 space-y-6 text-xs sm:text-sm text-gray-300 leading-relaxed">
+                    <p>This privacy statement represents the privacy policy applicable to all legal entities owned by Walnut Cafe & Bar. In the event of any changes to this privacy statement for the betterment of our services, we will post such changes here. Please read and understand this privacy statement before providing your information to us or using our services.</p>
+                    
+                    <p>This privacy statement applies to <a href="https://www.walnutcafe.com.my" class="text-gold underline">https://www.walnutcafe.com.my</a> and the websites of any Walnut Cafe & Bar's legal entity and related online activities. Further, this privacy statement provides information to external data subjects who are not engaged or employed by Walnut Cafe & Bar, where the data subjects provide us with Personal Data, or we collect data as part of our normal business operations, from a third-party service provider, contract partner, public sources, previous employers or organisations, trade fairs or communications channels such as email.</p>
+
+                    <h3 class="text-base font-bold text-white font-serif-title pt-2 border-t border-neutral-800">How and Why We Use Personal Data</h3>
+                    <p>While using our service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you (Personal Data). Personally identifiable information may include, but not limited to:</p>
+                    <ul class="list-disc pl-6 space-y-1 text-neutral-400">
+                        <li>Name (including but not limited to individual name or business entity registered name)</li>
+                        <li>Personal identification details (including but not limited to passport details)</li>
+                        <li>Email address</li>
+                        <li>Phone number</li>
+                        <li>Address, State, Postal Code, City</li>
+                        <li>Banking details</li>
+                        <li>Preferred language</li>
+                        <li>Preferred services or products</li>
+                        <li>Other relevant information</li>
+                    </ul>
+
+                    <p><strong>When you visit our website:</strong> When you visit Walnut Cafe & Bar website, we collect data through cookies to track the activity on our website. The data we collect through cookies consists of data relating to your device, IP address and your usage of the websites. We use the data collected through cookies to provide you with the best user experience and for improving the websites' content by tracking usage patterns and recording preferences and for allowing you to log on to specific sites.</p>
+
+                    <p><strong>When you subscribe to a newsletter:</strong> When you contact us, such as for business relations or interest, ordering products and services or in relation to projects, media or, investor contacts, supplier relations, sponsorships, or sign up for an event, we collect your Personal Data in order to enable us to meet your request or interest, provide support, or comply with contractual obligations or prepare to enter into a contract. When we have an existing customer relationship with you, we may also use your Personal Data to provide communication and direct market our products and services.</p>
+
+                    <p><strong>When we conduct integrity due diligence investigations:</strong> If and when we deem necessary, we will evaluate integrity due diligence investigations. This includes collection information to evaluate potential business relations or partners, their operation and business ethics. This investigation may include processing of Personal Data such as organisations position and roles, connections or relations to public authorities' representatives or relevant decision makers, possible sanction listings, contracts, relevant memberships, references, legal claims and reputational issues. The legal basis is to comply with legal obligations, pursue our legitimate interests and to establish, exercise or defend legal claims.</p>
+
+                    <h3 class="text-base font-bold text-white font-serif-title pt-2 border-t border-neutral-800">1. Sharing of Personal Data</h3>
+                    <p>2. We will not share your Personal Data with third parties except for in circumstances where such sharing is necessary as part of our regular business operations or to provide our services and support to you.</p>
+                    <p>3. Occasionally we use external third-party service providers for delivering services on our behalf and on our instructions as set out in a data processing agreement with the relevant service provider. We use such service providers for consultancy purposes, recruitment services, financial services, security services, IT services, communication services and integrity due diligence services. In such instances, we may share your Personal Data with such parties to the extent necessary to perform such work.</p>
+                    <p>4. We will not knowingly disclose your Personal Data to third parties for the purposes of allowing them to market their products or services to you.</p>
+                    <p>5. When required by law, regulation, legal process or an enforceable governmental request, we may share your Personal Data for legal reasons within Walnut Cafe & Bar and to public authorities or governments but only to the extent we are required to do so.</p>
+
+                    <h3 class="text-base font-bold text-white font-serif-title pt-2 border-t border-neutral-800">6. Transfer of Personal Data</h3>
+                    <p>7. Your personal information may be transferred to and maintained on computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from your jurisdiction.</p>
+                    <p>8. Your consent to the Privacy Statement followed by your submission of such information represents your agreement to that transfer.</p>
+                    <p>9. We will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Statement and no transfer of your personal information will take place to an organisation or a country unless there are adequate controls in place including the security of your data and other personal information.</p>
+
+                    <h3 class="text-base font-bold text-white font-serif-title pt-2 border-t border-neutral-800">10. Cookies</h3>
+                    <p>11. Some of our website or Service may use cookies and similar tracking technologies to track the activity on our website or service and hold certain information.</p>
+                    <p>12. Cookies are files with small amount of data which may include an anonymous unique identifier. Cookies are sent to your browser from a website and stored on your device.</p>
+                    <p>13. In the event you do not wish to receive such cookies, you may configure your browser to not refuse all cookies or to indicate when a cookie is being sent. However, you may not be able to use all the features and functionality of our website or service.</p>
+
+                    <h3 class="text-base font-bold text-white font-serif-title pt-2 border-t border-neutral-800">14. Security of Processing</h3>
+                    <p>15. We will process your Personal Data securely and will apply and maintain appropriate technical and organisations measures to protect your Personal Data against accidental or unlawful destruction or accidental loss, alteration, unauthorised disclosure or access, in particular where the processing involves the transmission of data over a network, and against all other unlawful forms of processing.</p>
+                    <p>16. Access to Personal Data is strictly limited to authorised personnel of Walnut Cafe & Bar and affiliates who have appropriate authorisation and a clear business need for that data.</p>
+
+                    <h3 class="text-base font-bold text-white font-serif-title pt-2 border-t border-neutral-800">17. Retention and Deletion of Data</h3>
+                    <p>18. Your Personal Data will be retained as long as necessary to fulfil the legitimate purpose(s) for the processing and as long as required by law. If you or your employer have a contractual relationship with us, any Personal Data relating to you will be retained as long as necessary to enable us to fulfil our obligations relating to that contractual relationship.</p>
+                    <p>19. If you consent to certain processing, we store your Personal Data until you withdraw your consent or once the Personal Data is no longer necessary for achieving the purpose of the processing.</p>
+
+                    <h3 class="text-base font-bold text-white font-serif-title pt-2 border-t border-neutral-800">20. Privacy Statements of Third Parties</h3>
+                    <p>21. This Privacy Statement addresses the collection, use and disclosure of Personal Data by Walnut Cafe & Bar as described above. This Privacy Statement does not address or govern the privacy practices adopted by third parties on third party websites or in relation to third party services that may be accessible through use of the website. Although we try only to link to websites that share our high standards for privacy, we are not in any way responsible for the content or the privacy practices employed by third party websites or third-party services. We encourage you to familiarise yourself with the privacy policies applicable to such websites or services prior to providing them with your Personal Data.</p>
+
+                    <h3 class="text-base font-bold text-white font-serif-title pt-2 border-t border-neutral-800">22. Changes to This Privacy Statement</h3>
+                    <p>23. We may update our Privacy Statement from time to time. If such updates are minor and do not have a material meaning for your rights or the way we use Personal Data, we may make such changes without posting a specific notice on our website. You are advised to review this Privacy Statement periodically for any changes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== PAGE: MEDIA ==================== -->
+        <div id="page-media" class="tab-page">
+            <div class="max-w-7xl mx-auto px-4 py-16">
+                <div class="text-center mb-10">
+                    <span class="text-gold text-xs font-bold tracking-widest uppercase">Visual Atmosphere</span>
+                    <h1 class="text-3xl sm:text-4xl font-serif-title font-bold text-white mt-1">MEDIA & GALLERY</h1>
+                    <div class="w-16 h-0.5 bg-gold mx-auto my-3"></div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="overflow-hidden rounded-lg border border-neutral-800 group">
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80" alt="Interior" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                        <div class="p-4 bg-cardbg text-xs font-semibold text-gray-300">Dining Hall & Custom Walnut Wood Tables</div>
+                    </div>
+                    <div class="overflow-hidden rounded-lg border border-neutral-800 group">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="Bar Counter" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                        <div class="p-4 bg-cardbg text-xs font-semibold text-gray-300">Craft Bar & Cocktail Station</div>
+                    </div>
+                    <div class="overflow-hidden rounded-lg border border-neutral-800 group">
+                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600&q=80" alt="Private Gathering" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                        <div class="p-4 bg-cardbg text-xs font-semibold text-gray-300">Private Event & Acoustic Stage</div>
+                    </div>
+                    <div class="overflow-hidden rounded-lg border border-neutral-800 group">
+                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80" alt="Barista Art" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                        <div class="p-4 bg-cardbg text-xs font-semibold text-gray-300">Handcrafted Specialty Espresso</div>
+                    </div>
+                    <div class="overflow-hidden rounded-lg border border-neutral-800 group">
+                        <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=600&q=80" alt="Specialty Dishes" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                        <div class="p-4 bg-cardbg text-xs font-semibold text-gray-300">Signature Seafood Aglio Olio</div>
+                    </div>
+                    <div class="overflow-hidden rounded-lg border border-neutral-800 group">
+                        <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80" alt="Cocktails" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                        <div class="p-4 bg-cardbg text-xs font-semibold text-gray-300">Artisanal Bar Drinks</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== PAGE: PROMOTION ==================== -->
+        <div id="page-promotion" class="tab-page">
+            <div class="max-w-7xl mx-auto px-4 py-16">
+                <div class="text-center mb-12">
+                    <span class="text-gold text-xs font-bold tracking-widest uppercase">Latest Updates & Specials</span>
+                    <h1 class="text-3xl sm:text-4xl font-serif-title font-bold text-white mt-1">PROMOTIONS & NEWS</h1>
+                    <div class="w-16 h-0.5 bg-gold mx-auto my-3"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-cardbg border border-neutral-800 rounded-xl overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="Festive Set" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <span class="text-gold text-[10px] uppercase font-bold tracking-wider">Seasonal Special</span>
+                                <h3 class="font-serif-title text-xl text-white my-2 font-bold">Prosperity Poon Choi & Festive Yee Sang</h3>
+                                <p class="text-neutral-400 text-xs leading-relaxed">Celebrate togetherness with our master chef's handcrafted luxury Poon Choi and auspicious salmon Yee Sang platter.</p>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="switchPage('contact')" class="w-full py-2 bg-gold hover:bg-gold-dark text-black text-xs font-bold uppercase rounded transition">Reserve Menu</button>
+                        </div>
+                    </div>
+
+                    <div class="bg-cardbg border border-neutral-800 rounded-xl overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80" alt="Set Lunch" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <span class="text-gold text-[10px] uppercase font-bold tracking-wider">Daily Promotion</span>
+                                <h3 class="font-serif-title text-xl text-white my-2 font-bold">Executive Set Lunch Deals</h3>
+                                <p class="text-neutral-400 text-xs leading-relaxed">Enjoy our main course accompanied by complimentary soup of the day and fresh brewed iced lemon tea from RM 23.90+.</p>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="switchPage('contact')" class="w-full py-2 bg-gold hover:bg-gold-dark text-black text-xs font-bold uppercase rounded transition">View Lunch Deal</button>
+                        </div>
+                    </div>
+
+                    <div class="bg-cardbg border border-neutral-800 rounded-xl overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="Afternoon Tea" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <span class="text-gold text-[10px] uppercase font-bold tracking-wider">Tea Time Delight</span>
+                                <h3 class="font-serif-title text-xl text-white my-2 font-bold">Afternoon High Tea Set for 2</h3>
+                                <p class="text-neutral-400 text-xs leading-relaxed">Relax on our custom solid walnut tables with artisan pastries, savory bites, and handcrafted specialty coffee or tea.</p>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="switchPage('contact')" class="w-full py-2 bg-gold hover:bg-gold-dark text-black text-xs font-bold uppercase rounded transition">Book Afternoon Tea</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== PAGE: CAREER ==================== -->
+        <div id="page-career" class="tab-page">
+            <div class="max-w-4xl mx-auto px-4 py-16">
+                <div class="text-center mb-10">
+                    <span class="text-gold text-xs font-bold tracking-widest uppercase">Join Our Passionate Team</span>
+                    <h1 class="text-3xl sm:text-4xl font-serif-title font-bold text-white mt-1">CAREER OPPORTUNITIES</h1>
+                    <div class="w-16 h-0.5 bg-gold mx-auto my-3"></div>
+                </div>
+
+                <div class="space-y-4 mb-12">
+                    <div class="bg-cardbg p-5 rounded-lg border border-neutral-800 flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+                        <div>
+                            <h3 class="font-serif-title text-lg text-white font-bold">Service Crew (Full-time / Part-time)</h3>
+                            <p class="text-neutral-400 text-xs mt-1">Puchong PFCC | Competitive Salary + Meals + Tips</p>
+                        </div>
+                        <a href="https://wa.me/60380526607?text=Hi%20Walnut%20Group,%20I%20want%20to%20apply%20for%20Service%20Crew" target="_blank" class="bg-gold hover:bg-gold-dark text-black text-xs font-bold px-4 py-2 rounded uppercase text-center">Quick Apply</a>
+                    </div>
+                    <div class="bg-cardbg p-5 rounded-lg border border-neutral-800 flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+                        <div>
+                            <h3 class="font-serif-title text-lg text-white font-bold">Specialty Barista</h3>
+                            <p class="text-neutral-400 text-xs mt-1">Puchong PFCC | Passionate about coffee & latte art</p>
+                        </div>
+                        <a href="https://wa.me/60380526607?text=Hi%20Walnut%20Group,%20I%20want%20to%20apply%20for%20Barista" target="_blank" class="bg-gold hover:bg-gold-dark text-black text-xs font-bold px-4 py-2 rounded uppercase text-center">Quick Apply</a>
+                    </div>
+                    <div class="bg-cardbg p-5 rounded-lg border border-neutral-800 flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+                        <div>
+                            <h3 class="font-serif-title text-lg text-white font-bold">Chef de Partie / Kitchen Helper</h3>
+                            <p class="text-neutral-400 text-xs mt-1">Puchong PFCC | Western & Fusion Cuisine experience</p>
+                        </div>
+                        <a href="https://wa.me/60380526607?text=Hi%20Walnut%20Group,%20I%20want%20to%20apply%20for%20Kitchen%20Role" target="_blank" class="bg-gold hover:bg-gold-dark text-black text-xs font-bold px-4 py-2 rounded uppercase text-center">Quick Apply</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== PAGE: CONTACT ==================== -->
+        <div id="page-contact" class="tab-page">
+            <div class="max-w-7xl mx-auto px-4 py-16">
+                <div class="text-center mb-12">
+                    <span class="text-gold text-xs font-bold tracking-widest uppercase">Get In Touch</span>
+                    <h1 class="text-3xl sm:text-4xl font-serif-title font-bold text-white mt-1">CONTACT & LOCATION</h1>
+                    <div class="w-16 h-0.5 bg-gold mx-auto my-3"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="space-y-6 text-sm text-gray-300">
+                        <div class="bg-cardbg p-6 rounded-xl border border-neutral-800 space-y-4">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-gold/10 text-gold border border-gold/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white font-serif-title">Location Address</h4>
+                                    <p class="text-neutral-400 text-xs mt-1 leading-relaxed">G-10, Ground Floor, Tower 4 & 5, PFCC, Jalan Puteri 1/2, Bandar Puteri, 47100 Puchong, Selangor, Malaysia.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-gold/10 text-gold border border-gold/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white font-serif-title">Phone & WhatsApp</h4>
+                                    <p class="text-neutral-400 text-xs mt-1">+603-8052 6607</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-gold/10 text-gold border border-gold/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white font-serif-title">Email Address</h4>
+                                    <p class="text-neutral-400 text-xs mt-1">walnutgroup8@gmail.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-gold/10 text-gold border border-gold/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white font-serif-title">Operating Hours</h4>
+                                    <p class="text-neutral-400 text-xs mt-1">Monday - Sunday: 11:00 AM - 11:59 PM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-cardbg p-6 rounded-xl border border-neutral-800">
+                            <h3 class="font-serif-title text-lg text-white font-bold mb-4">Send Us A Message</h3>
+                            <form onsubmit="handleFormSubmit(event, 'Message sent successfully! We will get back to you shortly.')" class="space-y-3">
+                                <input type="text" placeholder="Your Name *" required class="w-full bg-neutral-900 border border-neutral-700 rounded px-4 py-2 text-xs text-white focus:outline-none focus:border-gold">
+                                <input type="email" placeholder="Your Email *" required class="w-full bg-neutral-900 border border-neutral-700 rounded px-4 py-2 text-xs text-white focus:outline-none focus:border-gold">
+                                <textarea rows="3" placeholder="Message or Special Request..." required class="w-full bg-neutral-900 border border-neutral-700 rounded px-4 py-2 text-xs text-white focus:outline-none focus:border-gold"></textarea>
+                                <button type="submit" class="w-full bg-gold hover:bg-gold-dark text-black font-bold py-2.5 rounded text-xs uppercase transition">Submit Message</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="bg-cardbg rounded-xl border border-neutral-800 overflow-hidden flex flex-col h-full min-h-[400px]">
+                        <div class="p-4 bg-neutral-900 text-xs font-bold text-gold uppercase border-b border-neutral-800">
+                            <i class="fa-solid fa-map-pin mr-2"></i> Find Us at PFCC Puchong
+                        </div>
+                        <div class="flex-grow relative bg-neutral-900">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.113063558197!2d101.61413867586523!3d3.0374187536965123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4b434cb2c483%3A0xe54b9cb9be4d35e1!2sPuchong%20Financial%20Corporate%20Centre%20(PFCC)!5e0!3m2!1sen!2smy!4v1700000000000!5m2!1sen!2smy" class="w-full h-full border-0 absolute inset-0" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== PAGE: WALNUT GROUP ==================== -->
+        <div id="page-group" class="tab-page">
+            <div class="max-w-6xl mx-auto px-4 py-16">
+                
+                <div class="flex items-center justify-center my-8">
+                    <div class="h-px bg-neutral-700 flex-grow max-w-xs"></div>
+                    <h1 class="text-3xl sm:text-5xl font-serif-title font-normal text-slate-300 px-6 tracking-wide">Walnut Group</h1>
+                    <div class="h-px bg-neutral-700 flex-grow max-w-xs"></div>
+                </div>
+
+                <div class="bg-white rounded-xl p-8 sm:p-14 my-10 shadow-2xl">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center justify-items-center">
+                        
+                        <!-- ITEM 1: 1st image replaced Walnut Cafe & Bar logo inside WALNUT GROUP page -->
+                        <div class="flex flex-col items-center text-center group cursor-pointer" onclick="switchPage('home')">
+                            <svg class="w-48 h-56 text-black" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <use href="#walnut-cafe-crest-svg" />
+                            </svg>
+                            <div class="mt-3 text-center">
+                                <span class="font-serif-title font-extrabold text-xl sm:text-2xl tracking-wider text-black block">
+                                    WALNUT CAFE & BAR <sup class="text-xs">®</sup>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- ITEM 2: 2nd image replaced Walnut Bistro company logo inside WALNUT GROUP page -->
+                        <div class="flex flex-col items-center text-center group">
+                            <svg class="w-48 h-56" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M70 35 L85 20 L100 35 L115 20 L130 35 L125 45 L75 45 Z" fill="none" stroke="#222222" stroke-width="3"/>
+                                <circle cx="85" cy="17" r="3" fill="#222222"/>
+                                <circle cx="100" cy="14" r="4" fill="#222222"/>
+                                <circle cx="115" cy="17" r="3" fill="#222222"/>
+                                <line x1="72" y1="49" x2="128" y2="49" stroke="#222222" stroke-width="2"/>
+                                <path d="M40 60 C40 60 100 50 100 50 C100 50 160 60 160 60 C160 120 150 170 100 195 C50 170 40 120 40 60 Z" fill="none" stroke="#222222" stroke-width="4"/>
+                                <path d="M46 66 C46 66 100 57 100 57 C100 57 154 66 154 66 C154 118 145 163 100 187 C55 163 46 118 46 66 Z" fill="none" stroke="#c88a65" stroke-width="2.5"/>
+                                <line x1="100" y1="57" x2="100" y2="187" stroke="#222222" stroke-width="2"/>
+                                <line x1="46" y1="115" x2="154" y2="115" stroke="#222222" stroke-width="2"/>
+                                <path d="M46 115 L100 115 L100 187 C55 163 46 118 46 115 Z" fill="#222222"/>
+                                <g transform="translate(62, 72) scale(0.7)" stroke="#222222" stroke-width="2" fill="none">
+                                    <path d="M5 25 L5 5 C5 5 15 2 25 5 L25 25 M5 16 L25 16 M5 25 L25 25 M8 25 L8 35 M22 25 L22 35"/>
+                                </g>
+                                <g transform="translate(118, 68) scale(0.65)" stroke="#222222" stroke-width="2" fill="none">
+                                    <rect x="11" y="2" width="6" height="8" rx="1"/>
+                                    <rect x="12" y="10" width="4" height="18"/>
+                                    <path d="M14 28 C7 28 3 33 3 38 C3 42 7 43 2 50 C2 57 8 60 14 60 C20 60 26 57 21 50 C16 43 20 42 20 38 C20 33 16 28 14 28 Z"/>
+                                    <circle cx="14" cy="35" r="3" fill="#222222"/>
+                                    <rect x="10" y="51" width="8" height="2" fill="#222222"/>
+                                </g>
+                                <g transform="translate(62, 128) scale(0.7)" stroke="white" stroke-width="2" fill="none">
+                                    <polygon points="2,2 28,2 15,20"/>
+                                    <rect x="13" y="20" width="4" height="20"/>
+                                    <rect x="3" y="40" width="24" height="3" rx="1"/>
+                                    <line x1="3" y1="2" x2="20" y2="15" stroke="white" stroke-width="2"/>
+                                    <circle cx="8" cy="8" r="3" fill="white"/>
+                                </g>
+                                <g transform="translate(118, 128) scale(0.7)" stroke="#222222" stroke-width="2" fill="none">
+                                    <polygon points="2,2 28,2 34,22 -4,22"/>
+                                    <rect x="13" y="22" width="4" height="12"/>
+                                    <circle cx="15" cy="36" r="5"/>
+                                    <rect x="12" y="41" width="6" height="5"/>
+                                    <rect x="2" y="46" width="26" height="4" rx="1"/>
+                                </g>
+                            </svg>
+                            <div class="mt-3 text-center">
+                                <span class="font-serif-title font-extrabold text-xl sm:text-2xl tracking-wider text-[#c88a65] block">
+                                    WALNUT BISTRO
+                                </span>
+                                <div class="flex items-center justify-center gap-2 mt-1">
+                                    <div class="h-px bg-[#c88a65] w-6"></div>
+                                    <span class="text-[10px] tracking-widest uppercase font-semibold text-[#c88a65]">FOOD • DRINK • MUSIC</span>
+                                    <div class="h-px bg-[#c88a65] w-6"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-gray-300 leading-relaxed">
+                    <div class="bg-cardbg border border-neutral-800 rounded-xl p-6">
+                        <h3 class="text-xl font-serif-title text-gold font-bold mb-3">Walnut Cafe & Bar</h3>
+                        <p class="text-xs sm:text-sm text-neutral-300">
+                            Our flagship outlet in Puchong PFCC combining lifestyle, artisanal coffee, western fusion gourmet cuisine, and handcrafted solid walnut wooden tables in an art-focused 5-star atmosphere.
+                        </p>
+                    </div>
+
+                    <div class="bg-cardbg border border-neutral-800 rounded-xl p-6">
+                        <h3 class="text-xl font-serif-title text-bistro font-bold mb-3">Walnut Bistro</h3>
+                        <p class="text-xs sm:text-sm text-neutral-300">
+                            A lively bistro concept bringing together good food, refreshing drinks, and live acoustic music sessions for an unforgettable night with friends and family.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-black text-gray-400 text-xs border-t border-neutral-900 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-neutral-900">
+                <div class="md:col-span-5 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <svg class="w-12 h-12 text-white" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <use href="#walnut-cafe-crest-svg" />
+                        </svg>
+                        <span class="font-serif-title font-bold text-sm text-white tracking-wider">WALNUT CAFE & BAR</span>
+                    </div>
+                    <p class="text-neutral-400 text-xs leading-relaxed max-w-md">
+                        Walnut Cafe & Bar concerns about the quality of our food, drinks, services and the overall environment. Hence, we insist to use the freshest ingredients for all our signatured food and drinks.
+                    </p>
+                </div>
+
+                <div class="md:col-span-3">
+                    <h4 class="text-white font-bold text-sm font-serif-title uppercase mb-4 tracking-wider">Discover</h4>
+                    <ul class="space-y-2 text-xs font-medium">
+                        <li><a href="#" onclick="switchPage('home'); return false;" class="hover:text-gold transition">HOME</a></li>
+                        <li><a href="#" onclick="switchPage('about'); return false;" class="hover:text-gold transition">ABOUT</a></li>
+                        <li><a href="#" onclick="switchPage('event'); return false;" class="hover:text-gold transition">EVENT</a></li>
+                        <li><a href="#" onclick="switchPage('menu'); return false;" class="hover:text-gold transition">MENU</a></li>
+                        <li><a href="#" onclick="switchPage('products'); return false;" class="hover:text-gold transition">PRODUCTS</a></li>
+                        <li><a href="#" onclick="switchPage('policy'); return false;" class="hover:text-gold transition">POLICY</a></li>
+                        <li><a href="#" onclick="switchPage('promotion'); return false;" class="hover:text-gold transition">PROMOTION</a></li>
+                        <li><a href="#" onclick="switchPage('career'); return false;" class="hover:text-gold transition">CAREER</a></li>
+                        <li><a href="#" onclick="switchPage('contact'); return false;" class="hover:text-gold transition">CONTACT</a></li>
+                        <!-- ITEM 3: Standardized footer link -->
+                        <li><a href="#" onclick="switchPage('group'); return false;" class="hover:text-gold transition">WALNUT GROUP</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-4 space-y-3">
+                    <h4 class="text-white font-bold text-sm font-serif-title uppercase mb-4 tracking-wider">Contact Us</h4>
+                    <p class="text-xs text-neutral-300 leading-relaxed">
+                        <strong class="text-white">Location:</strong> G-10, Ground Floor, Tower 4 & 5, PFCC, Jalan Puteri 1/2, 47100 Puchong, Selangor, Malaysia.
+                    </p>
+                    <p class="text-xs text-neutral-300">
+                        <strong class="text-white">Phone:</strong> +603-8052 6607
+                    </p>
+                    <p class="text-xs text-neutral-300">
+                        <strong class="text-white">Email:</strong> walnutgroup8@gmail.com
+                    </p>
+                    <p class="text-xs text-neutral-300">
+                        <strong class="text-white">Hours:</strong> Mon - Sun: 11:00 AM - 11:59 PM
+                    </p>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-neutral-500 gap-4">
+                <div>
+                    © 2020-2026 Walnut Cafe & Bar 1115409-U | <span class="text-neutral-400">Visitor: 771032</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="https://facebook.com" target="_blank" class="w-8 h-8 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-gray-300 hover:text-gold hover:border-gold transition">
+                        <i class="fa-brands fa-facebook-f text-xs"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="w-8 h-8 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-gray-300 hover:text-gold hover:border-gold transition">
+                        <i class="fa-brands fa-instagram text-xs"></i>
+                    </a>
+                    <a href="https://xiaohongshu.com" target="_blank" title="XiaoHongShu RED" class="w-8 h-8 rounded-full badge-red flex items-center justify-center text-white font-bold text-[10px] shadow transition hover:opacity-90">
+                        小红书
+                    </a>
+                </div>
+            </div>
+        </div>
     </footer>
 
+    <div class="fixed bottom-6 left-6 z-50 flex items-center gap-3">
+        <a href="https://wa.me/60380526607?text=Hi%20Walnut%20Cafe,%20I%20have%20an%20inquiry" target="_blank" class="w-14 h-14 bg-white hover:bg-emerald-50 rounded-full shadow-2xl flex items-center justify-center border border-emerald-500/30 transition transform hover:scale-105">
+            <div class="flex items-center justify-center text-emerald-600 text-3xl">
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+        </a>
+    </div>
+
+    <div id="toast-msg" class="fixed bottom-6 right-6 z-50 bg-gold text-black px-5 py-3 rounded-lg font-bold text-xs shadow-2xl hidden transition duration-300">
+        Message sent!
+    </div>
+
+    <script>
+        function switchPage(pageId, subTab = null) {
+            const pages = document.querySelectorAll('.tab-page');
+            pages.forEach(p => p.classList.remove('active'));
+
+            const target = document.getElementById('page-' + pageId);
+            if (target) {
+                target.classList.add('active');
+            }
+
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => item.classList.remove('active'));
+            const activeNav = document.getElementById('nav-' + pageId);
+            if (activeNav) {
+                activeNav.classList.add('active');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.hero-slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.remove('opacity-0');
+                    slide.classList.add('opacity-100');
+                } else {
+                    slide.classList.remove('opacity-100');
+                    slide.classList.add('opacity-0');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        setInterval(nextSlide, 6000);
+
+        function filterMenu(category) {
+            const btns = document.querySelectorAll('.menu-tab-btn');
+            btns.forEach(btn => {
+                btn.classList.remove('bg-gold', 'text-black', 'font-bold');
+                btn.classList.add('bg-neutral-900', 'text-gray-300');
+            });
+            event.currentTarget.classList.remove('bg-neutral-900', 'text-gray-300');
+            event.currentTarget.classList.add('bg-gold', 'text-black', 'font-bold');
+
+            const items = document.querySelectorAll('.menu-item');
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function handleFormSubmit(e, message) {
+            e.preventDefault();
+            const toast = document.getElementById('toast-msg');
+            toast.innerText = message;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+            e.target.reset();
+        }
+    </script>
 </body>
 </html>
